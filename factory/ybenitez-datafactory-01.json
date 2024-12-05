@@ -1,0 +1,9 @@
+{
+	"name": "ybenitez-datafactory-01",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "18eb072b-736e-4744-a4d1-6f70999a2677",
+		"tenantId": "682a5a03-fb8c-47d0-bf17-4ffb55d7e2ba"
+	}
+}
