@@ -14,7 +14,14 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/project012024@outlook.com.pe/Transformacion capa bronce hacia capa plata"
+				},
+				"linkedServiceName": {
+					"referenceName": "DataFactory_Databricks",
+					"type": "LinkedServiceReference"
+				}
 			}
 		],
 		"annotations": []
