@@ -1,0 +1,59 @@
+{
+	"name": "ejecutar_todo",
+	"properties": {
+		"description": "Ejecuta todo los pipelines",
+		"activities": [
+			{
+				"name": "Exec_IngestaBronce",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Exec_IngestaPlata",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Exec_IngestaBronce",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Exec_IngestaOro",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Exec_IngestaPlata",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": []
+	}
+}
